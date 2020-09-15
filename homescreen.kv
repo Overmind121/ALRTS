@@ -1,0 +1,10 @@
+#:import MDRectangleFlatButton kivymd.uix.button.MDRectangleFlatButton
+#:include alrt.kv
+#:include infoscreen.kv
+#:include createscreen.kv
+<HomeScreen>:
+    MDRectangleFlatButton:
+        text:"Press to search up a stock"
+        pos_hint: {'center_x':0.5,'center_y':0.5}
+        on_release:
+            app.change_screen("create_screen")

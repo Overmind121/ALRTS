@@ -1,0 +1,77 @@
+#:import MDRaisedButton kivymd.uix.button.MDRaisedButton
+# :import MDTextField kivymd.textfields.MDTextField
+
+#:include homescreen.kv
+#:include alrt.kv
+#:include createscreen.kv
+
+<InfoScreen>
+    name: "info_screen"
+    GridLayout:
+        rows:1
+        pos_hint: {"top": 1, "left": 1}
+        size_hint: 1, .1
+
+        canvas:
+            Color:
+                rgba: app.theme_cls.primary_color
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        MDLabel:
+            text: "MACD"
+            font_size: 50
+            font_style: "H6"
+            halign: "center"
+
+        MDLabel:
+            text: root.stock_name
+            font_size: 50
+            font_style: "H6"
+            halign: "center"
+
+        MDLabel:
+            text: "RSI"
+            font_size: 50
+            font_style: "H6"
+            halign: "center"
+
+    GridLayout:
+        rows: 1
+        pos_hint: {"top": .8, "left": 1}
+        size_hint: 1, .1
+
+        MDLabel:
+            id: MACD
+            text: root.MACD_num
+            font_size: 50
+            font_style: "H6"
+            halign: "center"
+
+        MDLabel:
+            id: Price
+            text: root.PRICE_num
+            font_size: 50
+            font_style: "H6"
+            halign: "center"
+
+        MDLabel:
+            id: RSI
+            text: root.RSI_num
+            font_size: 50
+            font_style: "H6"
+            halign: "center"
+
+    MDRaisedButton:
+        id: Alert
+        pos_hint: {'center_x':0.5,'center_y':0.4}
+        text: "Alert"
+        halign: "center"
+        on_release: app.change_screen("alert_screen")
+
+    MDRaisedButton
+        pos_hint: {'center_x':0.5, 'center_y': 0.3}
+        text: "New Stock"
+        halign: "center"
+        on_release: app.change_screen("create_screen")

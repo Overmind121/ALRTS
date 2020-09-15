@@ -1,0 +1,18 @@
+# :import MDTextField kivymd.textfields.MDTextField
+#:include homescreen.kv
+#:include infoscreen.kv
+#:include alrt.kv
+<CreateScreen>
+    MDTextField:
+        name: "stock_request"
+        id: stock_request
+        hint_text: "Enter a valid stock"
+        helper_text: "Ex: AAPL, aapl"
+        helper_text_mode: "on_focus"
+        mode: "rectangle"
+        width: 300
+        size_hint_x: None
+        pos_hint: {'center_x':0.5,'center_y':0.5}
+        on_text_validate: app.gather_stock()
+        on_text_validate: app.change_screen("info_screen")
+        on_text_validate: root.transfer_name()

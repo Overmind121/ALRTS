@@ -1,0 +1,23 @@
+# :import MDTextField kivymd.textfield.MDTextField
+# :import MDRectangleFlatButton kivymd.uix.button.MDRectangleFlatButton
+#:include homescreen.kv
+#:include infoscreen.kv
+#:include createscreen.kv
+#:include alertscreen.kv
+
+GridLayout:
+    cols: 1
+    ScreenManager:
+        id:screen_manager
+        HomeScreen:
+            name: "home_screen"
+            id: home_screen
+        CreateScreen:
+            name: "create_screen"
+            id: create_screen
+        InfoScreen:
+            name: "info_screen"
+            id: info_screen
+        AlertScreen:
+            name: "alert_screen"
+            id: alert_screen

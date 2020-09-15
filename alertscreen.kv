@@ -1,0 +1,79 @@
+#:import MDLabel kivymd.uix.label.MDLabel
+# :import MDTextField kivymd.textfields.MDTextField
+#:import MDRaisedButton kivymd.uix.button.MDRaisedButton
+
+#:include homescreen.kv
+#:include infoscreen.kv
+#:include alrt.kv
+<AlertScreen>
+    GridLayout:
+        rows: 1
+        pos_hint: {"top": 1, "left": 1}
+        size_hint: 1, .1
+
+        MDLabel:
+            text: "MACD"
+            font_size: 50
+            font_style: "H6"
+            halign: "center"
+
+        MDLabel:
+            text: "PRICE"
+            font_size: 50
+            font_style: "H6"
+            halign: "center"
+
+        MDLabel:
+            text: "RSI"
+            font_size: 50
+            font_style: "H6"
+            halign: "center"
+
+
+    MDTextField:
+        id: MACD_alrt
+        hint_text: "ALERT"
+        helper_text_mode: "on_focus"
+        mode: "rectangle"
+        width: 125
+        size_hint_x: None
+        halign: "center"
+        pos_hint: {"center_x": 0.17, "center_y": 0.8}
+
+    MDTextField:
+        id: MACDS_alrt
+        hint_text: "ALERT"
+        helper_text_mode: "on_focus"
+        mode: "rectangle"
+        width: 125
+        size_hint_x: None
+        halign: "center"
+        pos_hint: {"center_x": 0.17, "center_y": 0.6}
+
+    MDTextField:
+        id: PRICE_alrt
+        hint_text: "ALERT"
+        helper_text_mode: "on_focus"
+        mode: "rectangle"
+        width: 125
+        size_hint_x: None
+        halign: "center"
+        pos_hint: {"center_x": 0.5, "center_y": 0.8}
+
+    MDTextField:
+        id: RSI_alrt
+        hint_text: "ALERT"
+        helper_text_mode: "on_focus"
+        mode: "rectangle"
+        width: 125
+        size_hint_x: None
+        halign: "center"
+        pos_hint: {"center_x": 0.85, "center_y": 0.8}
+
+    MDRaisedButton:
+        pos_hint: {'center_x':0.5,'center_y':0.2}
+        text: "Info"
+        halign: "center"
+        on_release: app.change_screen("info_screen")
+
+

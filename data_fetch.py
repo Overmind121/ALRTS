@@ -19,11 +19,17 @@ class FetchData:
         return self.stock_dat['macds'].iloc[-1]
 
     def get_rsi(self):
-        return self.stock_dat['rsi_14'].iloc[-1]
+        return self.stock_dat['rsi_12'].iloc[-1]
 
     def get_price(self):
         return si.get_live_price(self.stock)
 if __name__ == "__main__":
     stck = input("What Stock are you interested in?")
-    fetched_dat = FetchData(stck)
-    print(fetched_dat.get_macd())
+
+    while True:
+        fetched_dat = FetchData(stck)
+        before = 0
+        if(before != fetched_dat.get_macd()):
+            before = fetched_dat.get_macd()
+            print(before)
+#81.84710003304872
