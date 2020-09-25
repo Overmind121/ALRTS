@@ -1,6 +1,7 @@
-
+from yahoo_fin import stock_info as si
 import pandas as pd
-import pandas_datareader.data as web
+import fix_yahoo_finance 
+from pandas_datareader import data as web
 from stockstats import StockDataFrame as Sdf
 
 class FetchData:
