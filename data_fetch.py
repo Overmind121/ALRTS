@@ -1,6 +1,4 @@
 from yahoo_fin import stock_info as si
-import pandas as pd
-from pandas_datareader import data as web
 from stockstats import StockDataFrame as Sdf
 
 class FetchData:
@@ -9,7 +7,7 @@ class FetchData:
         if stock == "none":
             data = 0
         else:
-            data = web.get_data_yahoo(stock)
+            data = si.get_data(stock)
             self.stock = stock
             self.stock_dat = Sdf.retype(data)
 
